@@ -1,0 +1,44 @@
+spring:
+  application:    name: jmcp-user-registraion-api
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:jmcp-dev
+    username: jmcp
+    password: B@nty721
+    driverClassName: org.h2.Driver  jpa:    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:      ddl-auto: update
+  
+#  jmcpdev:
+#    datasource:
+#      jdbc-url: jdbc:oracle:thin:@hlk20150300.hc.cloud.hk.hsbc:2001:DHKOPSD1
+#      driver-class-name: oracle.jdbc.driver.OracleDriver
+#      username: jmcp_dev
+#      password: B@nty721
+      
+#  jpa:#    properties:#      hibernate:
+#        dialect: com.hsbc.opsportal.event.config.CustomOracleDialect
+#        enable_lazy_load_no_trans: true
+#        order_inserts: true
+#        jdbc:
+#          batch_size: 50
+#          fetch_size: 50
+#          batch_versioned_data: true
+#          order_inserts: true
+#          order_updates: true
+#    hibernate:#      ddl-auto: none
+#      show-sql: true
+eureka:  instance:    prefer-ip-address: false
+    lease-renewal-interval-in-seconds: 1
+    lease-expiration-duration-in-seconds: 2
+  client:
+    enabled: false
+    service-url:
+      defaultZone: http://github.JagmohanRawatt:8761/eureka/
+    healthcheck:      enabled: true
+    lease:
+      duration: 5
+server:  port: 3001
+
+    
